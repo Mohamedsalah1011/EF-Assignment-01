@@ -23,5 +23,11 @@ namespace EF_Assignment_01.Model
 
         [Column("Top_ID")]
         public int TopId { get; set; }
+
+        [ForeignKey("Top_ID")]
+        public virtual Topic Topic { get; set; }
+
+        public virtual ICollection<Stud_Course> StudCourses { get; set; }
+        public virtual ICollection<Course_Inst> CourseInsts { get; set; }
     }
 }

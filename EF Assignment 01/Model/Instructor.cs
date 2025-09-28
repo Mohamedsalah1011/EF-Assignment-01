@@ -26,6 +26,11 @@ namespace EF_Assignment_01.Model
 
         [Column("Dept_ID")]
         public int DeptId { get; set; }
+
+        [ForeignKey("Dept_ID")]
+        public virtual Department Department { get; set; }
+
+        public virtual ICollection<Course_Inst> CourseInsts { get; set; }
     }
 
 }

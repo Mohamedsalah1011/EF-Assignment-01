@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EF_Assignment_01.Model
 {
@@ -26,5 +21,10 @@ namespace EF_Assignment_01.Model
 
         [Column("Dep_Id")]
         public int DepId { get; set; }
+
+        [ForeignKey("Dep_Id")]
+        public virtual Department Department { get; set; }
+
+        public virtual ICollection<Stud_Course> StudCourses { get; set; }
     }
 }

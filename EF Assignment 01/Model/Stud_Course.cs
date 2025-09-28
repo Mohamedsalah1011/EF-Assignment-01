@@ -14,5 +14,11 @@ namespace EF_Assignment_01.Model
         public int Course_ID { get; set; }
 
         public int Grade { get; set; }
+
+        [ForeignKey("stud_ID")]
+        public virtual Student Student { get; set; }
+
+        [ForeignKey("Course_ID")]
+        public virtual Course Course { get; set; }
     }
 }
